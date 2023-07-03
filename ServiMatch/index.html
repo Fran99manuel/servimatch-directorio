@@ -1,0 +1,51 @@
+<?php 
+
+    
+    if(isset($_SESSION['usuario'])){
+        echo '<script language="javascript">text("Primero Debes Iniciar Sesión Para Acceder a esta Página");
+        window.location.href="/ServiMatch/Index.php"</script>';
+        die();
+    }
+    require_once ("header/header.php"); 
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/ServiMatch/estilos/styles.css">
+    <title>Registrarse</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+
+            <form class="" action="controlador/controladorVerificar.php" method="POST">
+             <h3 class="text-center">Iniciar Sesión</h3>
+                <input class="form-control" type="tel" name="cedula" placeholder="Cédula" require autofocus><br>
+                
+                <input class="form-control" type="password" name="contraseña" placeholder="Contraseña" require>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="administrador" id="administrador">
+                    <label class="form-check-label" for="administrador">Iniciar sesion como administrador</label>
+                </div>
+
+                <p><a href="#">¿Has olvidado tu contraseña?</a></p>
+
+                <p class="text-center">¿No tienes una cuenta? <a class="texto1" href="../vista/registro.php">¡Registrate aquí!</a></p>
+
+                <hr>
+                <input type="submit" name="Acceder" value="Acceder" class="btn btn-sm btn-success btn-block form-control"> <br>
+
+                <input type="reset" name="Cancelar" value="Cancelar" class="btn btn-sm btn-secondary btn-block form-control" href="../vista/inicioSecion.php">
+
+               <hr>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
